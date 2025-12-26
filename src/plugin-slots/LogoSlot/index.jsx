@@ -13,6 +13,13 @@ const LogoSlot = ({
     }}
   >
     <Logo href={href} src={src} alt={alt} {...attributes} />
+
+    <img 
+    src="/static/images/logo_kokos.png" 
+    alt="Kokos Logo" 
+    style={{ height: '40px', marginLeft: '10px' }} 
+  />
+  
   </PluginSlot>
 );
 
