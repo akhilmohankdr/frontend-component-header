@@ -7,17 +7,13 @@ const Logo = ({
   alt,
   ...attributes
 }) => (
-  <a href={href} className="logo" {...attributes} style={{ display: 'flex', alignItems: 'center' }}>
-    <img className="d-block" src={src} alt={alt} />
-    <span style={{
-      marginLeft: '20px', 
-      fontSize: '1.5rem', 
-      fontWeight: '700', 
-      color: 'white',
-      whiteSpace: 'nowrap'
-    }}>
-      {alt}
-    </span>
+  <a href={href} className="logo" {...attributes}>
+    <img className="d-block logo-image" src={src} alt={alt} />
+    {alt && (
+      <span className="site-name">
+        {alt}
+      </span>
+    )}
   </a>
 );
 
