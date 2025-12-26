@@ -200,12 +200,24 @@ $rounded-pill: 50rem  !default;
   }
 }
 
-// Custom Kokos School Header Styles
-.site-header-desktop {
-  // Purple gradient background
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
 
+
+// =============================================================================
+// KOKOS SCHOOL CUSTOM HEADER STYLES
+// =============================================================================
+
+// Configuration Variables (change these to customize)
+$header-bg-start: #667eea;    // Purple
+$header-bg-end: #764ba2;      // Dark Purple
+$header-text-color: white;
+$header-shadow: 0 2px 8px rgba(0,0,0,0.15);
+
+// Desktop Header
+.site-header-desktop {
+  background: linear-gradient(135deg, $header-bg-start 0%, $header-bg-end 100%) !important;
+  box-shadow: $header-shadow !important;
+
+  // Logo and School Name
   .logo {
     display: flex;
     align-items: center;
@@ -221,11 +233,12 @@ $rounded-pill: 50rem  !default;
       margin-left: 1.25rem;
       font-size: 1.5rem;
       font-weight: 700;
-      color: white !important;  // White text on purple background
+      color: $header-text-color !important;
       letter-spacing: 0.5px;
       white-space: nowrap;
       line-height: 1.2;
       
+      // Responsive font sizes
       @media (max-width: 992px) {
         font-size: 1.25rem;
         margin-left: 1rem;
@@ -237,7 +250,7 @@ $rounded-pill: 50rem  !default;
       }
       
       @media (max-width: 576px) {
-        display: none;
+        display: none; // Hide on small screens
       }
     }
     
@@ -250,45 +263,58 @@ $rounded-pill: 50rem  !default;
     }
   }
 
-  // White navigation links
-  .nav-link {
-    color: white !important;
+  // Main Navigation Links
+  .main-nav {
+    .nav-link {
+      color: $header-text-color !important;
+      
+      &:hover,
+      &:focus,
+      &.active {
+        background: rgba(255, 255, 255, 0.2) !important;
+        color: $header-text-color !important;
+      }
+    }
+  }
+
+  // Secondary Menu
+  .secondary-menu-container {
+    .nav-link {
+      color: $header-text-color !important;
+      
+      &:hover,
+      &:focus,
+      &.active,
+      .expanded & {
+        background: rgba(255, 255, 255, 0.2) !important;
+        color: $header-text-color !important;
+      }
+    }
+  }
+
+  // User Menu Button
+  .btn-outline-primary {
+    border-color: $header-text-color !important;
+    color: $header-text-color !important;
     
     &:hover,
-    &:focus,
-    &.active {
-      background: rgba(255, 255, 255, 0.2) !important;
-      color: white !important;
+    &:focus {
+      background: $header-text-color !important;
+      color: $header-bg-start !important;
     }
   }
 
-  // User menu button styling
-  .btn-outline-primary {
-    border-color: white !important;
-    color: white !important;
-    
-    &:hover {
-      background: white !important;
-      color: #667eea !important;
-    }
-  }
-
-  // Secondary menu
-  .secondary-menu-container {
-    .nav-link:hover,
-    .nav-link:focus,
-    .nav-link.active,
-    .expanded .nav-link {
-      background: rgba(255, 255, 255, 0.2) !important;
-      color: white !important;
-    }
+  // Avatar styling
+  .avatar {
+    border-color: $header-text-color !important;
   }
 }
 
-// Mobile header styles
+// Mobile Header
 .site-header-mobile {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: linear-gradient(135deg, $header-bg-start 0%, $header-bg-end 100%) !important;
   
+  // Logo and School Name
   .logo {
     display: flex;
     align-items: center;
@@ -302,7 +328,7 @@ $rounded-pill: 50rem  !default;
       margin-left: 0.5rem;
       font-size: 1rem;
       font-weight: 700;
-      color: white !important;
+      color: $header-text-color !important;
       white-space: nowrap;
       
       @media (max-width: 480px) {
@@ -311,12 +337,24 @@ $rounded-pill: 50rem  !default;
     }
   }
 
+  // Icon buttons
   .icon-button {
-    color: white !important;
+    color: $header-text-color !important;
     
     &:hover,
     &:focus {
       background: rgba(255, 255, 255, 0.2) !important;
     }
   }
+
+  // Menu items
+  svg {
+    color: $header-text-color !important;
+  }
+}
+
+// Hide "Discover New" button
+// Uncomment if you want to hide it
+.nav-link[href*="/courses"]:not([href*="/course/"]) {
+  display: none !important;
 }
