@@ -199,3 +199,124 @@ $rounded-pill: 50rem  !default;
     border-radius: var(--pgn-size-rounded-pill, $rounded-pill);
   }
 }
+
+// Custom Kokos School Header Styles
+.site-header-desktop {
+  // Purple gradient background
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    .logo-image {
+      display: block;
+      height: 100%;
+      max-height: 1.75rem;
+    }
+    
+    .site-name {
+      margin-left: 1.25rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white !important;  // White text on purple background
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      line-height: 1.2;
+      
+      @media (max-width: 992px) {
+        font-size: 1.25rem;
+        margin-left: 1rem;
+      }
+      
+      @media (max-width: 768px) {
+        font-size: 1.125rem;
+        margin-left: 0.75rem;
+      }
+      
+      @media (max-width: 576px) {
+        display: none;
+      }
+    }
+    
+    &:hover {
+      text-decoration: none;
+      
+      .site-name {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  // White navigation links
+  .nav-link {
+    color: white !important;
+    
+    &:hover,
+    &:focus,
+    &.active {
+      background: rgba(255, 255, 255, 0.2) !important;
+      color: white !important;
+    }
+  }
+
+  // User menu button styling
+  .btn-outline-primary {
+    border-color: white !important;
+    color: white !important;
+    
+    &:hover {
+      background: white !important;
+      color: #667eea !important;
+    }
+  }
+
+  // Secondary menu
+  .secondary-menu-container {
+    .nav-link:hover,
+    .nav-link:focus,
+    .nav-link.active,
+    .expanded .nav-link {
+      background: rgba(255, 255, 255, 0.2) !important;
+      color: white !important;
+    }
+  }
+}
+
+// Mobile header styles
+.site-header-mobile {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    
+    .logo-image {
+      height: 1.5rem;
+    }
+    
+    .site-name {
+      margin-left: 0.5rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white !important;
+      white-space: nowrap;
+      
+      @media (max-width: 480px) {
+        display: none;
+      }
+    }
+  }
+
+  .icon-button {
+    color: white !important;
+    
+    &:hover,
+    &:focus {
+      background: rgba(255, 255, 255, 0.2) !important;
+    }
+  }
+}
