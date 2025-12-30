@@ -8,7 +8,7 @@ const Logo = ({
   ...attributes
 }) => {
   console.log('Logo image path:', src);
-  (
+  return (
     <a href={href} className="logo" {...attributes}>
       <img className="d-block logo-image" src={src} alt={alt} />
       {alt && (
