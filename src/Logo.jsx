@@ -6,17 +6,19 @@ const Logo = ({
   src,
   alt,
   ...attributes
-}) => (
-  <a href={href} className="logo" {...attributes}>
-    <img className="d-block logo-image" src={src} alt={alt} />
-    {alt && (
-      <span className="site-name">
-        {alt}
-      </span>
-    )}
-  </a>
-);
-
+}) => {
+  console.log('Logo image path:', src);
+  (
+    <a href={href} className="logo" {...attributes}>
+      <img className="d-block logo-image" src={src} alt={alt} />
+      {alt && (
+        <span className="site-name">
+          {alt}
+        </span>
+      )}
+    </a>
+  );
+};
 export const logoDataShape = {
   href: PropTypes.string.isRequired,
   src: PropTypes.string.isRequired,
