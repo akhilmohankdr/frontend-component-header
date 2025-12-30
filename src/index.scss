@@ -4,6 +4,10 @@ $white: #fff;
 $component-active-bg: #0A3055FF !default;
 $component-active-color: $white !default;
 $rounded-pill: 50rem  !default;
+:root {
+  --pgn-color-white: red;
+}
+
 
 @import './Menu/menu.scss';
 @import './studio-header/StudioHeader.scss';
