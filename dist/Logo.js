@@ -9,26 +9,16 @@ var Logo = function Logo(_ref) {
     src = _ref.src,
     alt = _ref.alt,
     attributes = _objectWithoutProperties(_ref, _excluded);
+  console.log('Logo image path:', src);
   return /*#__PURE__*/React.createElement("a", _extends({
     href: href,
     className: "logo"
-  }, attributes, {
-    style: {
-      display: 'flex',
-      alignItems: 'center'
-    }
-  }), /*#__PURE__*/React.createElement("img", {
-    className: "d-block",
+  }, attributes), /*#__PURE__*/React.createElement("img", {
+    className: "d-block logo-image",
     src: src,
     alt: alt
-  }), /*#__PURE__*/React.createElement("span", {
-    style: {
-      marginLeft: '20px',
-      fontSize: '1.5rem',
-      fontWeight: '700',
-      color: 'white',
-      whiteSpace: 'nowrap'
-    }
+  }), alt && /*#__PURE__*/React.createElement("span", {
+    className: "site-name"
   }, alt));
 };
 export var logoDataShape = {

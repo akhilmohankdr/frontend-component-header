@@ -20,7 +20,14 @@ var LogoSlot = function LogoSlot(_ref) {
     href: href,
     src: src,
     alt: alt
-  }, attributes)));
+  }, attributes)), /*#__PURE__*/React.createElement("img", {
+    src: "/static/images/logo_kokos.png",
+    alt: "Kokos Logo",
+    style: {
+      height: '40px',
+      marginLeft: '10px'
+    }
+  }));
 };
 LogoSlot.propTypes = logoDataShape;
 export default LogoSlot;
