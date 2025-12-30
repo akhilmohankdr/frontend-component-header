@@ -204,3 +204,43 @@ $rounded-pill: 50rem  !default;
   }
 }
 
+
+
+// ========================================
+// CUSTOM: Header Gradient Background
+// ========================================
+.site-header-desktop,
+.site-header-mobile {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+// ========================================
+// CUSTOM: Two-Logo Layout
+// ========================================
+.logos-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  .logo {
+    // Platform logo styles
+    .logo-image {
+      height: 40px;
+      width: auto;
+    }
+  }
+
+  .logo-divider {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.5;
+    margin: 0 5px;
+  }
+
+  .school-logo {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+  }
+}
